@@ -69,7 +69,7 @@ class todo{
             JSON.stringify(data),
             (err)=>{
                 if(err) return reject(err.message);
-                resolve(`${value} removed successfully`);}
+                resolve(`${id} removed successfully`);}
         )
     })
 })
@@ -93,7 +93,7 @@ class todo{
             })
             fs.writeFile(filepath,JSON.stringify(data),(err)=>{
                 if(err) return reject(err.message);
-                resolve(`${name} successfully changed to ${edittask}`)
+                resolve(`${id} successfully changed to ${edittask}`)
                 
             })
 

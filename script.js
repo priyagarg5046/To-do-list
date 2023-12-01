@@ -26,9 +26,10 @@ app.post("/addtodo",async (req,res)=>{
         }
 })
 app.get("/deltodo",async (req,res)=>{
-    let taskname=req.query.name;
+    let taskid=req.query.id;
+    console.log(taskid);
     try{
-        let updated=await todo.deletedata(taskname);
+        let updated=await todo.deletedata(taskid);
         res.send(updated);
     }
     catch(err){
@@ -38,9 +39,9 @@ app.get("/deltodo",async (req,res)=>{
     
 })
 app.post("/edittodo",async(req,res)=>{
-    let {name,edittask}=req.body;
+    let {id,edittask}=req.body;
     try{
-        let edited=await todo.editdata(name,edittask);
+        let edited=await todo.editdata(id,edittask);
         res.send(edited);
     }
     catch(err){
